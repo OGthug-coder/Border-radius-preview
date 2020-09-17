@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Border-radius preview</title>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="radius-picker">
+            <div class="radius-input">
+                <p>left: </p>
+                <input type="number" min="0" max="100" id="left" value="10"/>
+            </div>
+            <div class="radius-input">
+                <p>right: </p>
+                <input type="number" min="0" max="100" id="right" value="30"/>
+            </div>
+            <div class="radius-input">
+                <p>top: </p>
+                <input type="number" min="0" max="100" id="top" value="50"/>
+            </div>
+            <div class="radius-input">
+                <p>bottom: </p>
+                <input type="number" min="0" max="100" id="bottom" value="20"/>
+            </div>
+            <div class="clipboard">
+                <img onclick="copy()" src="https://img.icons8.com/material-sharp/24/000000/copy.png"/>
+                <p id="copy">border-radius: 50% 20% 10% 30%;</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="dynamic-block" id="block"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
