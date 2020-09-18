@@ -40,21 +40,25 @@ body {
 
 .radius-input {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     font-family: 'Kufam', cursive;
     font-size: 30px;
 }
 
 .radius-input input {
-    margin-left: 10px;
-    width: 300px;
+    margin-top: 5px;
+    width: 200px;
     background: transparent;
     outline: 0;
     border-width: 0 0 2px;
     border-color: #b50d9f;
     font-size: 30px;
+}
+
+.radius-input p {
+    margin-bottom: 0;
 }
 
 /* Chrome, Safari, Edge, Opera */
