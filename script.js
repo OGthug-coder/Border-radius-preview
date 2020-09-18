@@ -19,6 +19,11 @@ for (let i = 0; i < inputs.length; i++) {
         let actual_style = getComputedStyle(block).borderRadius.split('%');
         actual_style.pop();
         actual_style[dict[side]] = inputs[i].value;
+        
+        if (actual_style.indexOf("") !== -1){
+            actual_style[actual_style.indexOf("")] = "0";
+        }
+
         actual_style = actual_style.map(Number);
         let new_style = `${actual_style[0]}% ${actual_style[1]}% ${actual_style[2]}% ${actual_style[3]}%`;
         block.style.borderRadius = new_style;
