@@ -11,14 +11,16 @@ let dict = {
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].oninput = function () {
 
+        inputs[i].value = checkCorrectInput(inputs[i].value);
+
         if (inputs[i].value > 100 | inputs[i].value < 0) {
             inputs[i].value = 0;
         }
         
         let top_radius = getCorrectValue(document.querySelector('#top').value);
-        let bottom_radius = document.querySelector('#bottom').value;
-        let left_radius = document.querySelector('#left').value;
-        let right_radius = document.querySelector('#right').value;
+        let bottom_radius = getCorrectValue(document.querySelector('#bottom').value);
+        let left_radius = getCorrectValue(document.querySelector('#left').value);
+        let right_radius = getCorrectValue(document.querySelector('#right').value);
 
         let new_style = `${top_radius}% ${bottom_radius}%` + 
             `${left_radius}% ${right_radius}%`;
@@ -41,4 +43,14 @@ function copy() {
 function getCorrectValue(value) {
     let tmp = value ? Number(value) : 0;
     return tmp;
+}
+
+function checkCorrectInput(value) {
+    let endOfLine = value.substr(value.length - 1);
+    let re = /\d*/;
+    if (!re.test(endOfLine)) {
+        console.log(value.split('').slice(0, -1).join(''));
+        return value.split('').slice(0, -1).join('');
+    }
+    return value
 }
