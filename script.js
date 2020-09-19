@@ -15,17 +15,14 @@ for (let i = 0; i < inputs.length; i++) {
             inputs[i].value = 0;
         }
         
-        let side = inputs[i].id;
-        let actual_style = getComputedStyle(block).borderRadius.split('%');
-        actual_style.pop();
-        actual_style[dict[side]] = inputs[i].value;
-        
-        if (actual_style.indexOf("") !== -1){
-            actual_style[actual_style.indexOf("")] = "0";
-        }
+        let top_radius = getCorrectValue(document.querySelector('#top').value);
+        let bottom_radius = document.querySelector('#bottom').value;
+        let left_radius = document.querySelector('#left').value;
+        let right_radius = document.querySelector('#right').value;
 
-        actual_style = actual_style.map(Number);
-        let new_style = `${actual_style[0]}% ${actual_style[1]}% ${actual_style[2]}% ${actual_style[3]}%`;
+        let new_style = `${top_radius}% ${bottom_radius}%` + 
+            `${left_radius}% ${right_radius}%`;
+        
         block.style.borderRadius = new_style;
         copy_data.innerHTML = `border-radius: ${new_style};`;
     }
@@ -39,4 +36,9 @@ function copy() {
     textArea.select();
     document.execCommand("Copy");
     textArea.remove();
+}
+
+function getCorrectValue(value) {
+    let tmp = value ? Number(value) : 0;
+    return tmp;
 }
