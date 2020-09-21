@@ -44,7 +44,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-family: 'Kufam', cursive;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .radius-input input {
@@ -55,6 +55,7 @@ body {
     border-width: 0 0 2px;
     border-color: #b50d9f;
     font-size: inherit;
+    color: inherit;
 }
 
 .radius-input p {

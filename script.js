@@ -13,10 +13,6 @@ for (let i = 0; i < inputs.length; i++) {
 
         inputs[i].value = checkCorrectInput(inputs[i].value);
 
-        if (inputs[i].value > 100 | inputs[i].value < 0) {
-            inputs[i].value = 0;
-        }
-        
         let top_radius = getCorrectValue(document.querySelector('#top').value);
         let bottom_radius = getCorrectValue(document.querySelector('#bottom').value);
         let left_radius = getCorrectValue(document.querySelector('#left').value);
@@ -47,10 +43,15 @@ function getCorrectValue(value) {
 
 function checkCorrectInput(value) {
     let endOfLine = value.substr(value.length - 1);
-    let re = /\d*/;
-    if (!re.test(endOfLine)) {
-        console.log(value.split('').slice(0, -1).join(''));
-        return value.split('').slice(0, -1).join('');
+    let re = /\d/;
+
+    if (!re.test(endOfLine)){ 
+        value = value.substr(0, value.length - 1);
     }
+    
+    if (value > 100 | value < 0) {
+        return value.substr(0, value.length - 1);
+    }
+    
     return value
 }
