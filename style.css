@@ -14,9 +14,11 @@ body {
 
 .content-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    padding: 10px;
 
     width: 90%;
     height: 90%;
@@ -26,8 +28,8 @@ body {
 
 .container {
     display: block;
-    width: 400px;
-    height: 400px;
+    width: 40vh;
+    height: 40vh;
     border: 1px solid #000000;
 }
 
@@ -39,12 +41,10 @@ body {
 }
 
 .radius-input {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     font-family: 'Kufam', cursive;
-    font-size: 30px;
+    font-size: 14px;
 }
 
 .radius-input input {
@@ -54,7 +54,7 @@ body {
     outline: 0;
     border-width: 0 0 2px;
     border-color: #b50d9f;
-    font-size: 30px;
+    font-size: inherit;
 }
 
 .radius-input p {
@@ -83,5 +83,19 @@ input[type=number] {
 .clipboard p {
     margin-left: 20px;
     font-family: 'Kufam', cursive;
-    font-size: 26px;
+    font-size: 14px;
+}
+
+@media screen and (min-width: 1100px) {
+    .content-wrapper {
+        flex-direction: row;
+    }
+
+    .radius-input {
+        font-size: 30px;
+    }
+
+    .clipboard p {
+        font-size: 30px;
+    }
 }
