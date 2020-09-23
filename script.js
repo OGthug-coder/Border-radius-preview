@@ -18,7 +18,7 @@ for (let i = 0; i < inputs.length; i++) {
         let left_radius = getCorrectValue(document.querySelector('#left').value);
         let right_radius = getCorrectValue(document.querySelector('#right').value);
 
-        let new_style = `${top_radius}% ${bottom_radius}%` + 
+        let new_style = `${top_radius}% ${bottom_radius}% ` + 
             `${left_radius}% ${right_radius}%`;
         
         block.style.borderRadius = new_style;
