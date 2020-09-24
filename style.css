@@ -35,15 +35,17 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 50% 20% 10% 30%;
-    background-color: #690062;
+    background: rgb(34,213,216);
+    background: linear-gradient(0deg, rgba(34,213,216,0.7305168279722416) 0%, rgba(5,9,160,0.9875000681957053) 48%);    
 }
 
 .radius-input {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-family: 'Kufam', cursive;
+    margin-top: 5px;
     font-size: 20px;
-    color: #690062;
+    color: #f7d2ed;
 }
 
 .radius-input input {
@@ -52,7 +54,7 @@ body {
     background: transparent;
     outline: 0;
     border-width: 0 0 2px;
-    border-color: #690062;
+    border-color: #f7d2ed;
     font-size: inherit;
     color: inherit;
 }
@@ -84,7 +86,7 @@ input[type=number] {
     margin-left: 20px;
     font-family: 'Kufam', cursive;
     font-size: 14px;
-    color: #690062;
+    color: #f7d2ed;
 }
 
 @media screen and (min-width: 1100px) {
